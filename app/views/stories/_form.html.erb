@@ -1,0 +1,42 @@
+<%= form_with(model: story) do |form| %>
+  <% if story.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+        <% story.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :control_date, style: "display: block" %>
+    <%= form.date_field :control_date %>
+  </div>
+
+  <div>
+    <%= form.label :weight, style: "display: block" %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div>
+    <%= form.label :height, style: "display: block" %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :pet_id, style: "display: block" %>
+    <%= form.text_field :pet_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
