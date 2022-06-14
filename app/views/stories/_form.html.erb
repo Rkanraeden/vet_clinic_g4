@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :control_date, style: "display: block" %>
+    <%= form.label :pet, "Mascota", style: "display: block" %>
+    <%= form.select :pet_id, @pets.map { |pet| [pet.name, pet_id] }, prompt: "Seleccione una mascota"%>
+  </div>
+
+  <div>
+    <%= form.label :control_date, "Fecha Control" style: "display: block" %>
     <%= form.date_field :control_date %>
   </div>
 
   <div>
-    <%= form.label :weight, style: "display: block" %>
+    <%= form.label :weight, "Peso(gr)" ,style: "display: block" %>
     <%= form.text_field :weight %>
   </div>
 
   <div>
-    <%= form.label :height, style: "display: block" %>
+    <%= form.label :height, "Altura(cm)" style: "display: block" %>
     <%= form.text_field :height %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description "Descripción", style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :pet_id, style: "display: block" %>
-    <%= form.text_field :pet_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Guardar" %>
   </div>
 <% end %>
